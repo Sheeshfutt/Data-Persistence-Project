@@ -11,6 +11,7 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    public HSManager HS;
     public GameObject GameOverText;
     
     private bool m_Started = false;
@@ -70,6 +71,7 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        HS.UpdateHS(m_Points);
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
